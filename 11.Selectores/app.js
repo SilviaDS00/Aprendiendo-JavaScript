@@ -6,3 +6,30 @@ parrafo3[2].id = "idprueba" //añadir un id cop estilo al parrafo3
 
 //Aplicar estilo al parrafo3
 parrafo3[2].style.backgroundColor = 'yellow' 
+
+
+//------------OpenWebinars--------------------------------------------------->
+let especial = document.getElementById("especial") //Selecciono del elemento con ese id y se guarda en una variable
+especial.style.color="red" //Cambio el color de ese elemento a rojo
+
+let noElement = document.getElementById("noExisto") //La variable se quedaría vacia porque no hay ningun elemento con ese id
+if(!noElement){
+    alert("No hay ningun elemento con el ID noExisto")
+}
+
+let lista = document.querySelectorAll("li") //Selecciono todos los elementos con esa etiqueta
+console.log(lista)
+
+//Recorrer elementos cuando se seleccionan varios:
+//Con el for tipico
+for(let i=0;i<lista.length;i++){
+    lista[i].style.fontSize="2rem" //Le cambio el tamaño uno por uno a todos los elementos de la lista
+}
+//Con for of
+for(const item of lista){
+    item.style.fontSize="2.3rem"
+}
+//Con forEach
+lista.forEach(item=>{
+    item.style.fontSize="3rem"
+})
