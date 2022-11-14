@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
+            list-style-type: none;
+            font-family: sans-serif;
+        }
+
+        #meu li a{
+            display: block;
+            color: black;
+            padding: .5em;
+        }
+
+        #menu>ul>li>a{
+            background: rgb(255, 229, 172);
+        }
+        #menu li ul{
+            background: pink;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .5s;
+        }
+
+        #menu li.mostrar ul{
+            max-height: 500px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav id="menu">
+        <ul>
+            <li>
+                <a href="#">Bloque 1</a>
+                <ul>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 1</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">Bloque 2</a>
+                <ul>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 2</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">Bloque 3</a>
+                <ul>
+                    <li><a href="#">Item 1</a></li>
+                    <li><a href="#">Item 2</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        window.addEventListener("load",e => {
+            const encabezados = document.querySelectorAll("#menu>ul>li>a");
+            console.log(encabezados);
+            //Asignamos la funcion manejadora
+            encabezados.forEach(element => {
+                element.addEventListener("click", despliega);
+            })
+            //Se visualiza un solo menu desplegable
+            function despliega(e){
+                e.preventDefault();
+                const nodo = e.target;
+                console.log(nodo);
+                var lipadre = nodo.parentNode;
+
+                if(lipadre.classList.contains("mostrar")){
+                    lipadre.classList.remove("mostrar");
+                }else{
+                    mostrados = lipadre.parentNode.getElementsByClassName("mostrar");
+                    for(var i = 0; i<mostrados.length; i++){
+                        mostrados[i].classList.remove("mostrar");
+                    }
+                    lipadre.classList.add("mostrar");
+                }
+            }
+        })
+    </script>
+</body>
+</html>

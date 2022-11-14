@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="03-estilo.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <h1>Cambiar contraseña</h1>
+        <form id="formulario" action="procesar.php">
+            <div class="form-group">
+                <label for="user">Nombre:</label>
+                <input type="text" name="user" id="user" autofocus>
+                <p class="error-feedback"></p>
+            </div>
+            <div class="form-group">
+                <label for="passwd">Password:</label>
+                <input type="password" name="passwd" id="passwd">
+                <p class="error-feedback"></p>
+            </div>
+            <div class="form-group">
+                <label for="newpasswd">Repita el password:</label>
+                <input type="password" name="newpasswd" id="newpasswd">
+                <p class="error-feedback"></p>
+            </div>
+            <div class="form-group">
+                <label for="fechaNac">Indica tu fecha de nacimiento para más seguridad:</label>
+                <input type="date" name="fechaNac" id="fechaNac">
+                <p class="error-feedback"></p>
+            </div>
+            <div class="form-group">
+                <label for="edad">Indica tu edad:</label>
+                <input type="text" name="edad" id="edad">
+                <p class="error-feedback"></p>
+            </div>
+            <div class="form-group">
+                <label for="condiciones">Aceptar el cambio de password:</label>
+                <input type="checkbox" name="condiciones" id="condiciones">
+                <p class="error-feedback"></p>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" id="btn-submit">Enviar</button>
+                <button type="reset">Restablecer</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="03-validavanilla.js"></script>
+
+</body>
+
+</html>
