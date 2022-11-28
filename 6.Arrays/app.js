@@ -51,7 +51,26 @@ const a3 = Array.from('Silvia Donaire')//En la posicion 0 estaría la "S", en la
 const set = new Set(['foo','bar','bar','foo']) //No permite tener elementos duplicados, "quitando" éstos al mostrarlo
 console.log(Array.from(set))
 
+set.has('bar') //Comprobar si contiene ese elemento
+set.add('oli') //Añade un nuevo elemento
+set.delete('oli') //Borra un elemento
+
+const newObject = {}
+set.add(newObject) //Añade un objeto
+
 //-----------MAP--------------
+//Almacena por cada elemento una serie de propiedades los cuales se pueden manipular:
+const mapEjemplo = new Map([['a', 1], ['b', 2]]) //Se almacena {a:1, b: 2}
+mapEjemplo.has('a') //Comprueba que tiene el elemento a
+mapEjemplo.set('c', 5) //Se almacena {a:1, b: 2, c: 3}
+mapEjemplo.get('c') //Muestra el contenido de c, que es 3
+mapEjemplo.delete('c') //Borra el elemento c con su valor
+console.log(mapEjemplo.size)
+
+mapEjemplo.set(newObject, 5) // {a:1, b: 2, ref: 5} 
+mapEjemplo.delete(newObject) //Para borrar el objeto añadido
+
+//-------Mas ejemplos con Map---------
 const map = new Map([[1,2],[2,4],[4,8]])
 console.log(Array.from(map))
 
